@@ -18,46 +18,35 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    /* inline-size: 100%; */
     margin-bottom: -19px;
-  
-
-  
   }
- #main::after {
-    
-    background: url("./fabric.jpg");
-    opacity: 0.9;
 
-    z-index: -1;   
-  }
 img {
-    width: 320px;
-   height: 252px;
-   object-fit: cover;
+  width: 320px;
+  height: 252px;
+  object-fit: cover;
 }
 
- 
-  .grid-item {
-    border: 1px solid rgb(235, 108, 210);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    width: 320px;
-    height: 252px;
-    box-shadow: 10px 5px 5px rgb(160, 154, 162);
+.grid-item {
+  border: 1px solid rgb(235, 108, 210);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 320px;
+  height: 252px;
+  box-shadow: 5px 5px 5px rgb(160, 154, 162);
 
   
   }
 
-  .is-flipped{
-    width: 350px;
-    height: auto;
+.is-flipped{
+  width: 350px;
+  height: auto;
   }
 
-  h3{
-    color: aliceblue;
-    font-size: 2em;
-    translate: 40%;
+h3{
+  color: aliceblue;
+  font-size: 2em;
+  translate: 40%;
   }
