@@ -113,4 +113,6 @@ openTwoCards();
 /* to do:
 1. add "Attempts" section where opening two cards would count as 1 attempt
 2. add function that doesn't allow to interact with cards anymore after all cards are open
-3. add 'play' button that reveals all cards for 1 second  */
+3. add 'play' button that reveals all cards for 1 second
+4. is it possible to create js module for backs array and import it to this file? It would make the code look more dry 
+5. is it possible to add event listener to img nodes instead window object? It would reduce the number of bugs, since every time user accidentally clicks on background instead of img, there's an error and the number of clicks become odd */
