@@ -73,18 +73,15 @@ let cardsIdsArr =[];
 function openTwoCards() {
 let click = 0;
 window.addEventListener('click', function(event){
+if(iterator2.includes(event.target)){
     click++;
     console.log(`click = ${click}`)
 let cardNum = (event.target.className);
-// console.log(`card Num: ${cardNum}`)
 const back = backs.find(t => t.id == cardNum);
-// console.log(`back ${back.id}`);
 event.target.src = back.src;
 cardsIdsArr.push(back.src);
-// finds card by its card name between the imgs array
 const cardClass = iterator2.find(a => a.className == cardNum);
 cardNumsArr.push(cardClass);
-
 
 if(click % 2 == 0 && cardsIdsArr[click-2] !== cardsIdsArr[click-1]) {
     console.log(`turn over`);
@@ -106,7 +103,7 @@ this.setTimeout(() => {
     return console.log(`you guessed right!`)
 } 
 // console.log(`${event.target.className} clicked`);
-})}
+}})}
 openTwoCards();
 
 
@@ -115,4 +112,4 @@ openTwoCards();
 2. add function that doesn't allow to interact with cards anymore after all cards are open
 3. add 'play' button that reveals all cards for 1 second
 4. is it possible to create js module for backs array and import it to this file? It would make the code look more dry 
-5. is it possible to add event listener to img nodes instead window object? It would reduce the number of bugs, since every time user accidentally clicks on background instead of img, there's an error and the number of clicks become odd */
+5. SOLVED(added condition for reacting to click only if it's one of imgs objects): is it possible to add event listener to img nodes instead window object? It would reduce the number of bugs, since every time user accidentally clicks on background instead of img, there's an error and the number of clicks become odd */
