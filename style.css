@@ -66,5 +66,54 @@ img {
 h3{
   color: aliceblue;
   font-size: 2em;
-  translate: 40%;
+  translate:150%;
+  }
+  button{
+  background-color: rgb(230, 224, 235);
+  box-shadow: 0px 0px 11px rgb(195, 133, 189);
+  margin-top: 15px;
+  border: 4px rgb(143, 53, 143) solid;
+  border-radius: 8px;
+  font-size: 2em;
+  translate:100%;
+  animation: rainbow 2.5s linear;
+	animation-iteration-count: infinite;
+  }
+  @keyframes rainbow{
+  100%,0%{
+    color: rgb(211, 1, 1);
+  }
+  8%{
+    color: rgb(197, 118, 39);
+  }
+  16%{
+    color: rgb(233, 233, 32);
+  }
+  25%{
+    color: rgb(101, 201, 2);
+  }
+  33%{
+    color: rgb(0, 158, 0);
+  }
+  41%{
+    color: rgb(0,255,127);
+  }
+  50%{
+    color: rgb(2, 156, 156);
+  }
+  58%{
+    color: rgb(1, 65, 130);
+  }
+  66%{
+    color: rgb(0, 0, 159);
+  }
+  75%{
+    color: rgb(93, 2, 183);
+  }
+  83%{ 
+    color: rgb(164, 4, 164);
+  }
+  91%{
+    color: rgb(196, 3, 99);
+      }
   }

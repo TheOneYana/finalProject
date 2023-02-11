@@ -68,11 +68,28 @@ let iterator2 = [...imgs];
 
 let cardNumsArr = []; 
 let cardsIdsArr =[];
-
+let winner = document.getElementById('winner');
+let playButton = document.querySelector('.rainbow');
 // MAIN FUNCTION
 function openTwoCards() {
+// function replaceImg() {
+
+// let a = [];
+// }
+// let ids = backs.find;
+playButton.addEventListener('click', function letsPlay(){
+    console.log(`hiiiii`);
+    for (let i = 0; i<iterator2.length; i++) {
+        let b = backs.find(t => t.id == iterator2[i].className)
+        iterator2[i].src = b.src;}
+    setTimeout(() => {
+    for (let i = 0; i<iterator2.length; i++) {
+        iterator2[i].src = './cardSkin.jpg';
+    }}, 2000)
+});
+
 let click = 0;
-window.addEventListener('click', function(event){
+window.addEventListener('click', function cardClick(event){
 // reacts to click event only if clicked on imgs object
 if(iterator2.includes(event.target)){
     click++;
@@ -98,7 +115,7 @@ cardNumsArr.push(cardClass);
         cardNumsArr[click-2].src = './cardSkin.jpg'
         cardNumsArr[click-1].src = './cardSkin.jpg'
     }
-    ,"500");
+    ,"350");
     // console.log(`No ${cardClass.className} == ${cardNum}`)
     }
     // if a pair of two cards don not have matching pics, turn the cards over
@@ -107,17 +124,28 @@ cardNumsArr.push(cardClass);
     // if a pair of two cards have matching pics,keep showing them.    
     } else if (click % 2 == 0  && cardsIdsArr[click-2] == cardsIdsArr[click-1]){
         
-        return console.log(`you guessed right!`)
+        console.log(`you guessed right!`)
     } 
     // console.log(`${event.target.className} clicked`);
+    let cardsLeft = iterator2.some(a => a.src === "http://127.0.0.1:5500/cardSkin.jpg");
+    console.log(cardsLeft)
+    if(!cardsLeft){
+       winner.innerText = 'You won the game!';
+       window.removeEventListener('click', cardClick);
+
+       console.log('You won the game!')
+    }
 }})}
 openTwoCards();
 
 
 /* to do:
 1. add "Attempts" section where opening two cards would count as 1 attempt
-2. add function that doesn't allow to interact with cards anymore after all cards are open
+
 3. add 'play' button that reveals all cards for 1 second
+
 4. is it possible to create js module for backs array and import it to this file? It would make the code look more dry 
 
-5. SOLVED(added condition for reacting to click only if it's one of imgs objects): is it possible to add event listener to img nodes instead window object? It would reduce the number of bugs, since every time user accidentally clicks on background instead of img, there's an error and the number of clicks become odd */
+SOLVED:
+2.(added removeEventListener) add function that doesn't allow to interact with cards anymore after all cards are open
+5.(added condition for reacting to click only if it's one of imgs objects): is it possible to add event listener to img nodes instead window object? It would reduce the number of bugs, since every time user accidentally clicks on background instead of img, there's an error and the number of clicks become odd */
