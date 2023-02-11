@@ -72,8 +72,6 @@ let winner = document.getElementById('winner');
 let playButton = document.querySelector('.rainbow');
 
 // MAIN FUNCTION
-function openTwoCards() {
-
 playButton.addEventListener('click', function letsPlay(){
     for (let i = 0; i<iterator2.length; i++) {
         let b = backs.find(t => t.id == iterator2[i].className)
@@ -83,7 +81,11 @@ playButton.addEventListener('click', function letsPlay(){
         iterator2[i].src = './cardSkin.jpg';
     }}, 2000)
     playButton.style.display = 'none';
+    openTwoCards();
 });
+function openTwoCards() {
+
+
 
 let click = 0;
 window.addEventListener('click', function cardClick(event){
@@ -128,7 +130,7 @@ if(click % 2 == 0 && cardsIdsArr[click-2] !== cardsIdsArr[click-1]) {
     console.log(`You won the game! Number of attempts: ${click/2}`)
     }
 }})};
-openTwoCards();
+
 
 
 /* to do:
