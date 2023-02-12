@@ -71,7 +71,7 @@ let cardsIdsArr =[];
 let winner = document.getElementById('winner');
 let playButton = document.querySelector('.rainbow');
 
-// MAIN FUNCTION
+
 playButton.addEventListener('click', function letsPlay(){
     for (let i = 0; i<iterator2.length; i++) {
         let b = backs.find(t => t.id == iterator2[i].className)
@@ -83,9 +83,9 @@ playButton.addEventListener('click', function letsPlay(){
     playButton.style.display = 'none';
     openTwoCards();
 });
+
+// MAIN FUNCTION
 function openTwoCards() {
-
-
 
 let click = 0;
 window.addEventListener('click', function cardClick(event){
